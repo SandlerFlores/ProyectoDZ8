@@ -110,7 +110,7 @@ class Hidromet(MDApp):
             "home-automation": "Estaciones Automáticas",
             "application-outline": "Acerca de ",
             "logout": "Salir",
-            # ... (Your existing icons)
+            
         }
         for icon_name, text in icons_item.items():
             item_drawer = ItemDrawer(icon=icon_name, text=text)
@@ -124,7 +124,7 @@ class Hidromet(MDApp):
             response.raise_for_status()  # Raise an HTTPError for bad responses
             data = response.json()
 
-            # Add markers based on API response
+            # Agregar los markers en la relacion a la API 
             for fdata in data['Estacion']:
                 if fdata['EstColor'] == "VERDE":
                     marker = MapMarker(lat=fdata['EstLatitud'], lon=fdata['EstLongitud'], source='logo/verde.png')
